@@ -24,7 +24,7 @@
 
  - [ ] A senha do usuário precisa estar criptografada;
  - [ ] Os dados da aplicação precisam estar persistidos em um banco PostgreSQL;
- - [ ] Todas as listas de dados precisam estar paginadas com 12 items por página;
+ - [ ] Todas as listas de dados precisam estar paginadas com 12 itens por página;
  - [ ] O usuário deve se identificado por um JWT (JSON Web Token);
  - [ ] O Back-end deve ser desenvolvido com NodeJs + Prisma + TypeScript;
  - [ ] O Front-end deve ser desenvolvido com ReactJs + NextJs + TypeScript;
