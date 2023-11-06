@@ -9,3 +9,128 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum LEVEL {
+  estagiario
+  trainee
+  junior
+  pleno
+  senior
+}
+
+model User {
+  id         String  @id @default(uuid())
+  name       String
+  last_name  String
+  avatar_url String?
+  tellphone  String?
+  email      String
+  password   String
+  job_level  LEVEL?
+  about_me   String?
+
+  skill Skill[]
+
+  Address    Address[]
+  Social     Social[]
+  Project    Project[]
+  Experience Experience[]
+  Education  Education[]
+
+  @@map("users")
+}
+
+model Address {
+  id           String @id @default(uuid())
+  zip_code     String
+  street       String
+  number       Int
+  neighborhood String
+  city         String
+  state        String
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  @@map("addresses")
+}
+
+model Social {
+  id          String @id @default(uuid())
+  social_name String
+  url         String
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+}
+
+model Project {
+  id          String  @id @default(uuid())
+  title       String
+  deploy_url  String
+  source_code String
+  description String?
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  portfolio Portfolio[]
+
+  @@map("projects")
+}
+
+model Experience {
+  id          String    @id @default(uuid())
+  description String?
+  title       String
+  company     String
+  start_date  DateTime
+  end_date    DateTime?
+  current     Boolean   @default(false)
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  portfolio Portfolio[]
+
+  @@map("experienses")
+}
+
+model Education {
+  id          String    @id @default(uuid())
+  title       String
+  school_name String
+  description String?
+  start_date  DateTime
+  end_date    DateTime?
+  current     Boolean   @default(false)
+
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  portifolio Portfolio[]
+
+  @@map("educations")
+}
+
+model Skill {
+  id   String @id @default(uuid())
+  name String
+
+  user       User[]
+  portifolio Portfolio[]
+
+  @@map("skills")
+}
+
+model Portfolio {
+  id        String  @id @default(uuid())
+  published Boolean @default(false)
+
+  skill      Skill[]
+  project    Project[]
+  experience Experience[]
+  education  Education[]
+
+  @@map("portfolios")
+}
