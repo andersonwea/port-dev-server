@@ -29,13 +29,14 @@ model User {
   job_level  LEVEL?
   about_me   String?
 
-  skill Skill[]
+  skills Skill[]
 
   Address    Address[]
   Social     Social[]
   Project    Project[]
   Experience Experience[]
   Education  Education[]
+  Portfolio  Portfolio[]
 
   @@map("users")
 }
@@ -127,10 +128,13 @@ model Portfolio {
   id        String  @id @default(uuid())
   published Boolean @default(false)
 
-  skill      Skill[]
-  project    Project[]
-  experience Experience[]
-  education  Education[]
+  user    User   @relation(fields: [user_id], references: [id])
+  user_id String
+
+  skills      Skill[]
+  projects    Project[]
+  experiences Experience[]
+  educations  Education[]
 
   @@map("portfolios")
 }
