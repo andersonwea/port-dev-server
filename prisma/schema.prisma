@@ -24,7 +24,7 @@ model User {
   last_name  String
   avatar_url String?
   tellphone  String?
-  email      String
+  email      String  @unique
   password   String
   job_level  LEVEL?
   about_me   String?
