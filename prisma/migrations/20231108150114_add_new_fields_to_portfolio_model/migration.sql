@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "portfolios" ADD COLUMN     "likes" INTEGER NOT NULL DEFAULT 0,
+ADD COLUMN     "visited" INTEGER NOT NULL DEFAULT 0;

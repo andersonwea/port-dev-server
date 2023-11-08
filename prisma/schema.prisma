@@ -127,6 +127,8 @@ model Skill {
 model Portfolio {
   id        String  @id @default(uuid())
   published Boolean @default(false)
+  likes     Int     @default(0)
+  visited   Int     @default(0)
 
   user    User   @relation(fields: [user_id], references: [id])
   user_id String
