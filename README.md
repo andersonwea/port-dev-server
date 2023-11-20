@@ -6,7 +6,7 @@
  - [ ]  Deve ser possível se autenticar;
  - [ ]  Deve ser possível o usuário cadastrar um portfólio;
  - [ ]  Deve ser possível o usuário cadastrar habilidades;
- - [ ]  Deve ser possível o usuário exluir habilidades;
+ - [ ]  Deve ser possível o usuário excluir habilidades;
  - [ ]  Deve ser possível o usuário cadastrar projetos;
  - [ ]  Deve ser possível o usuário excluir projetos;
  - [ ]  Deve ser possível o usuário editar projetos;
