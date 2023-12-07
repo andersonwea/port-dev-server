@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { beforeEach, describe, expect, it } from 'vitest'
 import { UsersRepository } from '../../repositories/users-repository'
 import { RegisterUseCase } from './register'
