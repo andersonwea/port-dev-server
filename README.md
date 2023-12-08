@@ -24,7 +24,7 @@
 - [ ] Deve ser possível obter os portfólios do usuário logado;
 - [ ] Deve ser possível o usuário listar todos os portfólios cadastrados na plataforma;
 - [ ] Deve ser possível o usuário visualizar um portfólio;
-- [ ] Deve ser possível obter o perfil do usuário logado;
+- [x] Deve ser possível obter o perfil do usuário logado;
 - [ ] Deve ser possível editar o perfil do usuário logado;
 - [ ] Deve ser possível o usuário curtir um portfólio;
 - [ ] Deve ser possível obter o número de curtidas e vizualizações de um portfólio;
